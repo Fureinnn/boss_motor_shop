@@ -1,0 +1,173 @@
+body {
+  background-color: #1f1f2e;
+  color: #f0f0f0;
+}
+
+.navbar, footer {
+  background-color: #0d3b3f;
+}
+
+h4.card-title {
+  color: #00d4ff;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.navbar-brand, .nav-link {
+  color: #ffffff !important;
+}
+
+.nav-link:hover {
+  color: #00d4ff !important;
+}
+
+h1, h2, h3, h4, h6 {
+  color: #00d4ff;
+}
+
+.card-body p {
+  color: #e0e0e0;
+}
+
+.btn-primary {
+  background-color: #00b3b3;
+  border-color: #00b3b3;
+}
+
+.btn-primary:hover {
+  background-color: #009999;
+  border-color: #009999;
+}
+
+.card {
+  background-color: #2c2c3c;
+  border: 1px solid #444;
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card-header {
+  background-color: #0d3b3f;
+  border-bottom: 1px solid #444;
+}
+
+.service-card p {
+  color: #d1d1d1;
+}
+
+.testimonial-card p {
+  color: #f5f5f5;
+  font-style: italic;
+}
+
+.hero-section {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://www.webike.ph/ph_news/wp-content/uploads/2022/09/Steed.jpg');
+  background-size: cover;
+  background-position: center;
+  padding: 100px 0;
+  margin-bottom: 50px;
+}
+
+.service-icon {
+  font-size: 2.5rem;
+  color: #00d4ff;
+  margin-bottom: 15px;
+}
+
+.feature-box {
+  padding: 30px;
+  border-radius: 5px;
+  margin-bottom: 30px;
+}
+
+.product-img {
+  height: 200px;
+  object-fit: contain;
+  background-color: #1f1f2e;
+  padding: 10px;
+}
+
+.hero-title {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.form-container {
+  max-width: 500px;
+  margin: 0 auto;
+  background-color: #2c2c3c;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.about-contact-form input,
+.about-contact-form textarea {
+  opacity: 0.95;
+}
+
+.categories-card a {
+  text-decoration: none !important;
+}
+
+.active-category {
+  color: #00d4ff !important;
+  font-weight: bold !important;
+}
+
+footer a.text-white {
+  text-decoration: none;
+}
+
+.profile-header {
+  padding: 2rem;
+  background-color: #0d3b3f;
+  border-radius: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.profile-detail {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.profile-detail i {
+  font-size: 1.5rem;
+  color: #00d4ff;
+}
+
+.profile-detail .ms-3 {
+  margin-left: 1rem;
+}
+
+.action-btn {
+  width: 100%;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  display: inline-block;
+  text-align: center;
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  transition: background-color 0.3s ease;
+}
+
+.btn-logout {
+  color: #dc3545;
+  border: 1px solid #dc3545;
+}
+
+.btn-logout:hover {
+  background-color: #dc3545;
+  color: #fff;
+  text-decoration: none;
+}
+
+.action-btn:hover {
+  background-color: #009999;
+  color: #fff;
+  text-decoration: none;
+}
