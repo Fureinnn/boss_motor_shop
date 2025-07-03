@@ -44,17 +44,14 @@ To set up and run this application, follow these steps:
 *   Open your web browser and navigate to the URL where you placed the project files (e.g., `http://localhost/BOSS_MOTOR_SHOP/` or `http://your_domain/BOSS_MOTOR_SHOP/`).
 
 ## Login Information
-
+*![image](https://github.com/user-attachments/assets/af537f83-dee1-4111-9661-3532415bdd72)
 **Admin Account:(nothing yet)**
-
 *   **Username:** ``
 *   **Password:** `` 
 
 **Regular User Account:**
-*![Uploading image.png…]()
-
-
 *   You can register a new user account via the `register.php` page.
+*   ![image](https://github.com/user-attachments/assets/55afd989-01f9-4036-b115-cb6d4fb55e5c)
 *   Alternatively, if the `boss_motor_shop.sql` file contains sample user data, you might find existing user credentials there.
 
 ## File Descriptions
@@ -62,11 +59,14 @@ To set up and run this application, follow these steps:
 Here's a brief overview of what each file in the `BOSS_MOTOR_SHOP` directory does:
 
 *   **`about.php`**:
+*   ![image](https://github.com/user-attachments/assets/6fd676fa-120d-4389-b4d2-24b1e70b93a0)
+
     *   Displays information about Boss's Motor Shop.
     *   Includes a contact form for users to send messages.
     *   Handles form submission, sanitization, and validation for contact messages.
 
 *   **`admin/`**:
+*   nothing yet only plans this program focuses in the cart and user and order
     *   **`admin/dashboard.php`**: The main administrative dashboard. Provides an overview of total products, orders, and users, along with a list of recent orders. Accessible only by administrators.
     *   **`admin/order.php`**: Manages individual order details and allows administrators to update order statuses. Also displays a list of all orders if no specific order is being viewed.
     *   **`admin/products.php`**: Allows administrators to manage products (add, edit, delete/deactivate). Includes a modal form for product creation and modification.
@@ -82,11 +82,14 @@ Here's a brief overview of what each file in the `BOSS_MOTOR_SHOP` directory doe
     *   The SQL dump file containing the database schema and initial data for the application. This file is crucial for setting up the database.
 
 *   **`cart.php`**:
+*   ![image](https://github.com/user-attachments/assets/c4cd7d4d-1b40-4316-bc28-9d67656bcb42)
+
     *   Manages the user's shopping cart.
     *   Handles adding, removing, and updating product quantities in the cart.
     *   Displays the current items in the cart and the order summary.
 
 *   **`checkout.php`**:
+*   
     *   Handles the checkout process for placing an order.
     *   Collects user details (autofilled if logged in) and shipping information.
     *   Allows selection of payment methods (Credit Card, PayPal, Cash on Delivery).
