@@ -74,7 +74,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         foreach ($cart_items as $item) {
             $total_amount += $item['price'] * $item['quantity'];
         }
-        $tax_amount = 0;
+        $tax_rate = 0.10; // 10% tax rate
+        $tax_amount = $total_amount * $tax_rate;
         $shipping_cost = 0;
 
         $order_number = uniqid('ORD-');
