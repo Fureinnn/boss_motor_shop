@@ -44,7 +44,6 @@ To set up and run this application, follow these steps:
 *   Open your web browser and navigate to the URL where you placed the project files (e.g., `http://localhost/BOSS_MOTOR_SHOP/` or `http://your_domain/BOSS_MOTOR_SHOP/`).
 
 ## Login Information
-*![image](https://github.com/user-attachments/assets/af537f83-dee1-4111-9661-3532415bdd72)
 **Admin Account:(nothing yet)**
 *   **Username:** ``
 *   **Password:** `` 
@@ -89,8 +88,10 @@ Here's a brief overview of what each file in the `BOSS_MOTOR_SHOP` directory doe
     *   Displays the current items in the cart and the order summary.
 
 *   **`checkout.php`**:
-*   
-    *   Handles the checkout process for placing an order.
+*   ![image](https://github.com/user-attachments/assets/4a0d1737-7bf8-469f-b0ea-b22b4b09db47)
+
+    
+    *    Handles the checkout process for placing an order.
     *   Collects user details (autofilled if logged in) and shipping information.
     *   Allows selection of payment methods (Credit Card, PayPal, Cash on Delivery).
     *   Processes order creation and clears the cart upon successful placement.
@@ -103,10 +104,12 @@ Here's a brief overview of what each file in the `BOSS_MOTOR_SHOP` directory doe
     *   **`includes/header.php`**: Contains the HTML structure for the website's header, including the navigation bar, logo, and dynamic links based on user login status (e.g., Cart, Profile, Admin Dashboard, Login/Register).
 
 *   **`index.php`**:
+*   ![image](https://github.com/user-attachments/assets/4f8bab0a-1b76-47b4-b505-d50372053da7)
     *   The main landing page of the website.
     *   Features a hero section, services overview, featured products, and customer testimonials.
 
 *   **`login.php`**:
+*![image](https://github.com/user-attachments/assets/af537f83-dee1-4111-9661-3532415bdd72)
     *   Handles user login.
     *   Authenticates users against the database and sets session variables upon successful login.
 
@@ -114,13 +117,19 @@ Here's a brief overview of what each file in the `BOSS_MOTOR_SHOP` directory doe
     *   Destroys the user's session and redirects them to the login page, effectively logging them out.
 
 *   **`productinfo.php`**:
+*   ![image](https://github.com/user-attachments/assets/3e252aa6-bea8-4f26-bd76-1e4e915652b0)
+
     *   Displays detailed information for a specific product, including description, specifications, brand, model, and warranty details.
 
 *   **`products.php`**:
+*   ![image](https://github.com/user-attachments/assets/d86c4aa2-e9ef-4e87-9d87-5554955e8391)
+
     *   Displays a list of all available products.
     *   Allows users to filter products by category and search by name or SKU.
     *   Provides options to add products to the cart (if logged in).
 
 *   **`profile.php`**:
+*   ![image](https://github.com/user-attachments/assets/970bba20-6842-4482-a074-aa57c5167a7e)
+
     *   Displays the logged-in user's personal, address, and account information.
     *   Includes quick action buttons for common user tasks.
