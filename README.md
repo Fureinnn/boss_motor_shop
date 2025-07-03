@@ -51,6 +51,8 @@ To set up and run this application, follow these steps:
 *   **Password:** `` 
 
 **Regular User Account:**
+*![Uploading image.png…]()
+
 
 *   You can register a new user account via the `register.php` page.
 *   Alternatively, if the `boss_motor_shop.sql` file contains sample user data, you might find existing user credentials there.
