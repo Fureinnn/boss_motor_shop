@@ -74,21 +74,30 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         foreach ($cart_items as $item) {
             $total_amount += $item['price'] * $item['quantity'];
         }
-        $tax_rate = 0.10; // 10% tax rate
-        $tax_amount = $total_amount * $tax_rate;
+        $tax_amount = 0;
         $shipping_cost = 0;
 
         $order_number = uniqid('ORD-');
         $payment_status = ($payment_method === 'cod') ? 'pending' : 'paid';
         $order_status = 'pending';
 
-        $stmt = $mysqli->prepare("INSERT INTO `order` (user_id, order_number, total_amount, tax_amount, shipping_cost, order_status, payment_status, payment_method, shipping_address, order_date) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, NOW())");
-        $stmt->bind_param("isdddssss", $user_id, $order_number, $total_amount, $tax_amount, $shipping_cost, $order_status, $payment_status, $payment_method, $shipping_address);
+        $stmt = $mysqli->prepare("INSERT INTO `order` (user_id, order_number, total_amount, tax_amount, shipping_cost, order_status, payment_status, shipping_address, order_date) VALUES (?, ?, ?, ?, ?, ?, ?, ?, NOW())");
+        $stmt->bind_param("isdddsss", $user_id, $order_number, $total_amount, $tax_amount, $shipping_cost, $order_status, $payment_status, $shipping_address);
 
         if ($stmt->execute()) {
             $order_id = $stmt->insert_id;
 
-            // TODO: Insert order items into order_items table if exists
+            // Insert order items into order_item table
+            foreach ($cart_items as $item) {
+                $stmt_item = $mysqli->prepare("INSERT INTO order_item (order_id, product_id, quantity, unit_price, total_price) VALUES (?, ?, ?, ?, ?)");
+                $product_id = getProductIdByName($item['name'], $mysqli);
+                $quantity = $item['quantity'];
+                $unit_price = $item['price'];
+                $total_price = $unit_price * $quantity;
+                $stmt_item->bind_param("iiidd", $order_id, $product_id, $quantity, $unit_price, $total_price);
+                $stmt_item->execute();
+                $stmt_item->close();
+            }
 
             // Clear cart items from database
             $stmt_clear = $mysqli->prepare("DELETE ci FROM cart_item ci JOIN cart c ON ci.cart_id = c.cart_id WHERE c.user_id = ?");
@@ -96,6 +105,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $stmt_clear->execute();
             $stmt_clear->close();
 
+            // Redirect to thankyou.php after successful checkout
             header("Location: thankyou.php?order=" . urlencode($order_number));
             exit();
 
@@ -105,6 +115,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
         $stmt->close();
     }
+}
+
+// Helper function to get product_id by product name
+function getProductIdByName($product_name, $mysqli) {
+    $stmt = $mysqli->prepare("SELECT product_id FROM product WHERE product_name = ?");
+    $stmt->bind_param("s", $product_name);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    $product = $result->fetch_assoc();
+    $stmt->close();
+    return $product ? $product['product_id'] : 0;
 }
 
 function displayOrderSummary() {

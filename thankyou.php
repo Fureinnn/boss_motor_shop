@@ -19,7 +19,7 @@ if ($order_number) {
     // Fetch order items
     $order_items = [];
     if ($order) {
-        $stmt_items = $mysqli->prepare("SELECT p.product_name, oi.quantity, oi.unit_price FROM order_items oi JOIN product p ON oi.product_id = p.product_id WHERE oi.order_id = ?");
+        $stmt_items = $mysqli->prepare("SELECT p.product_name, oi.quantity, oi.unit_price FROM order_item oi JOIN product p ON oi.product_id = p.product_id WHERE oi.order_id = ?");
         $stmt_items->bind_param("i", $order['order_id']);
         $stmt_items->execute();
         $result_items = $stmt_items->get_result();
@@ -73,6 +73,20 @@ if ($order_number) {
                     </tr>
                   <?php endforeach; ?>
                 </tbody>
+                <tfoot>
+                  <tr>
+                    <td colspan="3" class="text-end"><strong>Tax Amount:</strong></td>
+                    <td><?php echo number_format($order['tax_amount'], 2); ?></td>
+                  </tr>
+                  <tr>
+                    <td colspan="3" class="text-end"><strong>Shipping Cost:</strong></td>
+                    <td><?php echo number_format($order['shipping_cost'], 2); ?></td>
+                  </tr>
+                  <tr>
+                    <td colspan="3" class="text-end"><strong>Total Amount:</strong></td>
+                    <td><?php echo number_format($order['total_amount'], 2); ?></td>
+                  </tr>
+                </tfoot>
               </table>
             <?php else: ?>
               <p>No products found for this order.</p>
